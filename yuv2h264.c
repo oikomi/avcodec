@@ -94,7 +94,8 @@ int main(int argc, char* argv[])
 		return -1;
 	}
 
-	video_st = av_new_stream(pFormatCtx, 0);
+	//video_st = av_new_stream(pFormatCtx, 0);
+	video_st = avformat_new_stream(pFormatCtx, NULL);
 	if (video_st == NULL)
 	{
 		return -1;
