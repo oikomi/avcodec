@@ -129,7 +129,8 @@ int main(int argc, char* argv[])
 		printf("avcodec_open2  error\n");
 		return -1;
 	}
-	picture = avcodec_alloc_frame();
+	//picture = avcodec_alloc_frame();
+	picture = av_frame_alloc();
 	size = avpicture_get_size(pCodecCtx->pix_fmt, pCodecCtx->width, pCodecCtx->height);
 	picture_buf = (uint8_t *)av_malloc(size);
 	avpicture_fill((AVPicture *)picture, picture_buf, pCodecCtx->pix_fmt, pCodecCtx->width, pCodecCtx->height);
